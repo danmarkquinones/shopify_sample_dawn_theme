@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  app:
+    build: ./docker/ruby
+    image: ${APP_NAME}-theme
+    working_dir: /app
+    tty: true
+    ports:
+      - '9292:9292'
+      - '1234:1234'
+    volumes:
+      - ./:/app
+    environment:
+      SHOPIFY_CLI_THEME_STORE: ${SHOPIFY_CLI_THEME_STORE}
+    networks:
+      - app_network
+networks:
+  app_network:
+    driver: bridge
