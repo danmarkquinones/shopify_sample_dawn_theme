@@ -933,6 +933,10 @@ class VariantSelects extends HTMLElement {
 
         if (price) price.classList.remove('visibility-hidden');
 
+        const sku = document.getElementById(`sku-${this.dataset.section}`);
+
+        if (sku) price.classList.remove('visibility-hidden') , this.updateSku(html);
+
         if (inventoryDestination) inventoryDestination.classList.toggle('visibility-hidden', inventorySource.innerText === '');
 
         const addButtonUpdated = html.getElementById(`ProductSubmitButton-${sectionId}`);
@@ -944,6 +948,14 @@ class VariantSelects extends HTMLElement {
           variant: this.currentVariant
         }});
       });
+  }
+
+  updateSku(html){
+    const id = `sku-${this.dataset.section}`;
+    const destination = document.getElementById(id);
+    const source = html.getElementById(id);
+
+    if (source && destination) destination.innerHTML = source.innerHTML
   }
 
   toggleAddButton(disable = true, text, modifyClass = true) {
@@ -970,7 +982,7 @@ class VariantSelects extends HTMLElement {
     const addButtonText = button.querySelector('[name="add"] > span');
     const price = document.getElementById(`price-${this.dataset.section}`);
     const inventory = document.getElementById(`Inventory-${this.dataset.section}`);
-    const sku = document.getElementById(`Sku-${this.dataset.section}`);
+    const sku = document.getElementById(`sku-${this.dataset.section}`);
 
     if (!addButton) return;
     addButtonText.textContent = window.variantStrings.unavailable;
