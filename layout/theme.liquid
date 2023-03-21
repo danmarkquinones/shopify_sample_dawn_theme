@@ -1,11 +1,22 @@
 <!doctype html>
-<html class="no-js" lang="{{ request.locale.iso_code }}">
+<html
+  class="no-js"
+  lang="{{ request.locale.iso_code }}">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="">
-    <link rel="canonical" href="{{ canonical_url }}">
+    <meta
+      charset="utf-8">
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge">
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1">
+    <meta
+      name="theme-color"
+      content="">
+    <link
+      rel="canonical"
+      href="{{ canonical_url }}">
     <link
       rel="preconnect"
       href="https://cdn.shopify.com"
@@ -36,14 +47,22 @@
     </title>
 
     {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
+      <meta
+        name="description"
+        content="{{ page_description | escape }}">
     {% endif %}
 
     {% render 'meta-tags' %}
 
-    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script
+      src="{{ 'constants.js' | asset_url }}"
+      defer="defer"></script>
+    <script
+      src="{{ 'pubsub.js' | asset_url }}"
+      defer="defer"></script>
+    <script
+      src="{{ 'global.js' | asset_url }}"
+      defer="defer"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -119,17 +138,25 @@
         ;
 
         --gradient-base-background-1: {% if settings.gradient_background_1 != blank %}
-          {{ settings.gradient_background_1 }}{% else %}
-          {{ settings.colors_background_1 }}{% endif %};
+          {{ settings.gradient_background_1 }}
+        {% else %}
+          {{ settings.colors_background_1 }}
+        {% endif %};
         --gradient-base-background-2: {% if settings.gradient_background_2 != blank %}
-          {{ settings.gradient_background_2 }}{% else %}
-          {{ settings.colors_background_2 }}{% endif %};
+          {{ settings.gradient_background_2 }}
+        {% else %}
+          {{ settings.colors_background_2 }}
+        {% endif %};
         --gradient-base-accent-1: {% if settings.gradient_accent_1 != blank %}
-          {{ settings.gradient_accent_1 }}{% else %}
-          {{ settings.colors_accent_1 }}{% endif %};
+          {{ settings.gradient_accent_1 }}
+        {% else %}
+          {{ settings.colors_accent_1 }}
+        {% endif %};
         --gradient-base-accent-2: {% if settings.gradient_accent_2 != blank %}
-          {{ settings.gradient_accent_2 }}{% else %}
-          {{ settings.colors_accent_2 }}{% endif %};
+          {{ settings.gradient_accent_2 }}
+        {% else %}
+          {{ settings.colors_accent_2 }}
+        {% endif %};
 
         --media-padding: {{ settings.media_padding }}
         px;
@@ -257,8 +284,10 @@
         --spacing-sections-desktop: {{ settings.spacing_sections }}
         px;
         --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}
-          {{ settings.spacing_sections }}{% else %}
-          {{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
+          {{ settings.spacing_sections }}
+        {% else %}
+          {{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}
+        {% endif %}px;
 
         --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}
         px;
@@ -290,10 +319,12 @@
         --buttons-radius: {{ settings.buttons_radius }}
         px;
         --buttons-radius-outset: {% if settings.buttons_radius > 0 %}
-          {{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}
+          {{ settings.buttons_radius | plus: settings.buttons_border_thickness }}
+        {% else %}
           0{% endif %}px;
         --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}
-          {{ settings.buttons_border_thickness }}{% else %}
+          {{ settings.buttons_border_thickness }}
+        {% else %}
           0{% endif %}px;
         --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }}
         ;
@@ -323,14 +354,16 @@
         --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}
         px;
         --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}
-          {{ settings.inputs_shadow_vertical_offset | abs }}{% else %}
+          {{ settings.inputs_shadow_vertical_offset | abs }}
+        {% else %}
           0{% endif %}px;
         --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}
         px;
         --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}
         px;
         --inputs-radius-outset: {% if settings.inputs_radius > 0 %}
-          {{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}
+          {{ settings.inputs_radius | plus: settings.inputs_border_thickness }}
+        {% else %}
           0{% endif %}px;
 
         --variant-pills-radius: {{ settings.variant_pills_radius }}
@@ -417,8 +450,11 @@
     </script>
   </head>
 
-  <body class="gradient">
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+  <body
+    class="gradient">
+    <a
+      class="skip-to-content-link button visually-hidden"
+      href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
 
@@ -427,9 +463,6 @@
     {%- endif -%}
 
     {% sections 'header-group' %}
-    {% unless product.handle == "bitter-bush" %}
-      <p>HE THIS IS BITTER BUSH</p>
-    {% endunless %}
 
     <main
       id="MainContent"
@@ -441,9 +474,12 @@
 
     {% sections 'footer-group' %}
 
-    <ul hidden>
-      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
-      <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
+    <ul
+      hidden>
+      <li
+        id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+      <li
+        id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
 
     <script>
@@ -477,7 +513,9 @@
     </script>
 
     {%- if settings.predictive_search_enabled -%}
-      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+      <script
+        src="{{ 'predictive-search.js' | asset_url }}"
+        defer="defer"></script>
     {%- endif -%}
   </body>
 </html>

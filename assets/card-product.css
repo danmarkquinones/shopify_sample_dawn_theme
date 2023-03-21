@@ -1,0 +1,31 @@
+.card-container{
+   margin: 10px;
+   padding: 10px;
+   background-color: #f2f2f2;
+   border-radius: 5px;
+   box-shadow: 2px 2px 5px gray;
+}
+.img-container{
+    height: 150px !important;
+    overflow: hidden !important;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+.img-container > .item-image{
+    /* object-fit: contain !important;
+    object-position: center; */
+}
+
+.title{
+    text-transform: capitalize;
+    margin:10px 0px;
+}
+.title:hover > a{
+    color: blue;
+}
+.title > a{
+    color: black;
+    text-decoration: none;
+}
