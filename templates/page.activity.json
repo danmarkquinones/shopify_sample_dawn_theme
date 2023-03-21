@@ -1,0 +1,11 @@
+{"sections":{
+    "main":{
+        "type":"activity",
+        "settings":{
+            "padding_top":36,
+            "padding_bottom":36
+        }
+    }
+},
+    "order":["main"]
+}
