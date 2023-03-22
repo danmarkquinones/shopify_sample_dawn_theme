@@ -1,5 +1,23 @@
+{{ 'activity.css' | asset_url | stylesheet_tag }}
+
 <div>
-  Activity Page
+  {% if section.settings.activity_header != blank %}
+    <p class="red-text">{{ section.settings.activity_header }}</p>
+  {% endif %}
+
+  {% for block in section.blocks %}
+    {%- case block.type -%}
+      {% when 'collection' %}
+      <div>
+        <p>{{ block.settings.show_price }}</p>
+
+        <p>{{ block.settings.activity_collection.title }}</p>
+        {% for product in block.settings.activity_collection.products %}
+          <p>{{ product.title }}</p>
+        {% endfor %}
+      </div>
+    {%- endcase -%}
+  {% endfor %}
 </div>
 
 {% schema %}
