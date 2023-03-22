@@ -1,11 +1,25 @@
-{"sections":{
-    "main":{
-        "type":"activity",
-        "settings":{
-            "padding_top":36,
-            "padding_bottom":36
+{
+  "sections": {
+    "main": {
+      "type": "activity",
+      "blocks": {
+        "e1c848f9-1793-4ad2-8812-395d8d26d422": {
+          "type": "collection",
+          "settings": {
+            "activity_collection": "",
+            "show_price": false
+          }
         }
+      },
+      "block_order": [
+        "e1c848f9-1793-4ad2-8812-395d8d26d422"
+      ],
+      "settings": {
+        "activity_header": "ACTIVITY SAMPLE COLLECTION"
+      }
     }
-},
-    "order":["main"]
+  },
+  "order": [
+    "main"
+  ]
 }
