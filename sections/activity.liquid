@@ -1,3 +1,44 @@
 <div>
   Activity Page
 </div>
+
+{% schema %}
+  {
+    "name": "Activity Collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "activity_header",
+        "label": "⚡Activity Header"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "limit": 4,
+        "name": "⚡Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "activity_collection",
+            "label": "⚡Activity Collection"
+          }, {
+            "type": "checkbox",
+            "id": "show_price",
+            "label": "Show Price"
+          }
+        ]
+      }, {
+        "type": "Descrition",
+        "name": "⚡Description",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "show_price",
+            "label": "Show Price"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
