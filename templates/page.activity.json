@@ -6,8 +6,8 @@
         "e1c848f9-1793-4ad2-8812-395d8d26d422": {
           "type": "collection",
           "settings": {
-            "activity_collection": "",
-            "show_price": false
+            "activity_collection": "activity",
+            "show_price": true
           }
         }
       },
